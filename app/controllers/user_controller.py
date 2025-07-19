@@ -35,5 +35,12 @@ def delete_user(userid):
 
 @user_bp.route("/", methods=["GET"])
 def list_users():
+    phone = request.args.get("phone")
+    if phone:
+        user = user_service.get_user_by_phone(phone)
+        if user:
+            return jsonify(user)
+        return jsonify({"error": "User not found"}), 404
+
     users = user_service.list_all_users()
     return jsonify(users)
