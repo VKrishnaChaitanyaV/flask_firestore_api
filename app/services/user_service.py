@@ -27,3 +27,6 @@ def delete_user(userid):
 
 def list_all_users():
     return user_repository.list_users()
+
+def get_user_by_phone(phone):
+    return user_repository.find_user_by_phone(phone)
