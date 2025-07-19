@@ -2,4 +2,4 @@ Flask
 firebase-admin
 pydantic
 email-validator
-gunicorn
+
